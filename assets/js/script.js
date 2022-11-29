@@ -37,7 +37,7 @@ $( function() {
     }
     else if (city=="Los Angelas"){
       console.log("Los Angelas");
-      viitCountry="United States";
+      visitCountry="United States";
     }
   });
 
