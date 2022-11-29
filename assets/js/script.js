@@ -1,11 +1,4 @@
 
-let locations = [
-  {city:"Miami", country:"United States"},
-  {city:"Cancun", country:"Mexico"},
-  {city:"Paris", country:"France"},
-  {city:"London", country:"England"},
-  {city:"Los Angelas", country:"United States"}
-];
 
 //This is the autocomplete for the search bar. 
 $( function() {
@@ -23,10 +16,10 @@ $( function() {
     });
   } );
 
-
+//on click function for search
   $(".searchBtn").click(function(){
     city = $("#city").val();
-   
+   //hard code depending on city chosen to set other variables
     if (city=="Miami") {
    console.log("Miami") ;
    visitCountry = "United States";
