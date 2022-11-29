@@ -6,7 +6,7 @@ $( function() {
       "Cancun",
       "Paris",
       "London",
-      "Los Angelas"
+      "Los Angeles"
      
     ];
     $( "#city" ).autocomplete({
