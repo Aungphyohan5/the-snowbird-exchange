@@ -1,55 +1,75 @@
 
 
 //This is the autocomplete for the search bar. 
-$( function() {
-    var availableCities = [
-      
-      "Miami",
-      "Cancun",
-      "Paris",
-      "London",
-      "Los Angeles"
-     
-    ];
-    $( "#city" ).autocomplete({
-      source: availableCities
-    });
-  } );
+$(function () {
+  var availableCities = [
 
-//on click function for search
-  $(".searchBtn").click(function(){
-    city = $("#city").val();
-   //hard code depending on city chosen to set other variables
-    if (city=="Miami") {
-   console.log("Miami") ;
-   visitCountry = "United States";
-    } else if (city=="Cancun"){
-      console.log("Cancun");
-      visitCountry = "Mexico";
-    }
-    else if (city=="Paris"){
-      console.log("Paris ");
-      visitCountry="France";
-    }
-    else if (city=="London"){
-      console.log("london");
-      visitCountry="England";
-    }
-    else if (city=="Los Angelas"){
-      console.log("Los Angelas");
-      visitCountry="United States";
-    }
+    "Miami",
+    "Cancun",
+    "Paris",
+    "London",
+    "Los Angeles"
+
+  ];
+  $("#city").autocomplete({
+    source: availableCities
   });
+});
+function getApi() {
+  var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
+
+  fetch(requestURL)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data)
+
+
+      city = $("#city").val();
+
+      if (city == "Miami") {
+        console.log("Miami");
+        visitCountry = "United States";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+      } else if (city == "Cancun") {
+        console.log("Cancun");
+        visitCountry = "Mexico";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+      }
+      else if (city == "Paris") {
+        console.log("Paris ");
+        visitCountry = "France";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR + " EUR - France Euro")
+      }
+      else if (city == "London") {
+        console.log("london");
+        visitCountry = "England";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP + " GBP - Pound Sterling")
+      }
+      else if (city == "Los Angeles") {
+        console.log("Los Angeles");
+        viitCountry = "United States";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+      }
+
+    })
+}
+
+$(".searchBtn").click(function () {
+  getApi()
+});
 
 
 
-  /* 
-    ************
-  Dump of weather API code from Brian
-    ************
-  */
+/* 
+  ************
+Dump of weather API code from Brian
+  ************
+*/
 
-  // All code is written in a single function that fires when the search button is clicked.
+// All code is written in a single function that fires when the search button is clicked.
 function searchButton(event) {
   event.preventDefault();
 
@@ -116,7 +136,7 @@ function searchButton(event) {
             .then(function (data) {
               console.log(data);
               fiveDayHeadingEl.textContent = 'Five Day Forecast:';
-              
+
               /* Each section aligns to one of the display columns for the five day forecast. Is there a more
               efficient method than this? The index numbers selected are 24 hours ahead of the user's current
               time so will always show the weather for the time they're searching.
