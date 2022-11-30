@@ -16,6 +16,7 @@ $(function () {
   });
 });
 function getApi() {
+   // fetch request gets a list of currency exchange rate
   var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
 
   fetch(requestURL)
@@ -28,7 +29,7 @@ function getApi() {
 
 
       city = $("#city").val();
-
+//hard code depending on city chosen to set other variables
       if (city == "Miami") {
         console.log("Miami");
         visitCountry = "United States";
@@ -56,7 +57,7 @@ function getApi() {
 
     })
 }
-
+// on click function for search
 $(".searchBtn").click(function () {
   getApi()
 });
