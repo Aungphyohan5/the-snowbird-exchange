@@ -33,20 +33,24 @@ function getApi() {
       if (city == "Miami") {
         console.log("Miami");
         visitCountry = "United States";
+        // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
       } else if (city == "Cancun") {
         console.log("Cancun");
         visitCountry = "Mexico";
+        // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
       }
       else if (city == "Paris") {
         console.log("Paris ");
         visitCountry = "France";
+        // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR + " EUR - France Euro")
       }
       else if (city == "London") {
         console.log("london");
         visitCountry = "England";
+        // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP + " GBP - Pound Sterling")
       }
       else if (city == "Los Angeles") {
