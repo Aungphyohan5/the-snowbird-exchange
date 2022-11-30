@@ -123,9 +123,7 @@ console.log("hi")
         })
         .then(function (data) {
           console.log(data);
-        })
-      })
-    }
+        }) 
 //           cityNameEl.textContent = data.name + '   ';
 //           var icon = data.weather[0].icon;
 //           document.querySelector('#weather-icon').src = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
@@ -133,15 +131,16 @@ console.log("hi")
 //           windEl.textContent = 'Current Wind Speed: ' + data.wind.speed + ' kph';
 //           humidityEl.textContent = 'Current Humidity: ' + data.main.humidity + ' %';
 
-//           // Third fetch now to the 5 day forecast API, again using the lat and lon variables from above.
-//           var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
+          // Third fetch now to the 5 day forecast API, again using the lat and lon variables from above.
+          var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
-//           fetch(fiveDayForecast)
-//             .then(function (response) {
-//               return response.json();
-//             })
-//             .then(function (data) {
-//               console.log(data);
+          fetch(fiveDayForecast)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              console.log(data);
+            }) }) }
 //               fiveDayHeadingEl.textContent = 'Five Day Forecast:';
               
 //               /* Each section aligns to one of the display columns for the five day forecast. Is there a more
