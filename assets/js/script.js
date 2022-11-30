@@ -1,4 +1,4 @@
-
+let city = "";
 
 //This is the autocomplete for the search bar. 
 $(function () {
@@ -58,51 +58,50 @@ function getApi() {
 }
 
 $(".searchBtn").click(function () {
-  getApi()
+  city = $("#city").val();
+  getApi();
+  searchButton();
 });
 
 
 
-// /* 
-//   ************
-// Dump of weather API code from Brian
-//   ************
-// */
+/*
+  ************
+Dump of weather API code from Brian
+  ************
+*/
 
-//   // All code is written in a single function that fires when the search button is clicked.
-// function searchButton(event) {
-//   event.preventDefault();
+  // All code is written in a single function that fires when the search button is clicked.
+function searchButton() {
+  //event.preventDefault();
+console.log("hi")
+  // Pulls the value from the text field of the search bar and adds it into the geo-location API to return coordinates.
+  var searchEntry = city;
+  var apiKey = 'cf49844e3f54a62c370a39540478245f';
+  var geoCoordinates = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchEntry + '&appid=' + apiKey;
 
-//   // Pulls the value from the text field of the search bar and adds it into the geo-location API to return coordinates.
-//   var searchEntry = document.querySelector('#search-text').value;
-//   var apiKey = 'cf49844e3f54a62c370a39540478245f';
-//   var geoCoordinates = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchEntry + '&appid=' + apiKey;
+  // Undefined variables that will be defined later, placed here so they can be used in all parts of the function.
+  var lat;
+  var lon;
 
-//   // Undefined variables that will be defined later, placed here so they can be used in all parts of the function.
-//   var lat;
-//   var lon;
+ 
+  
 
-//   // Throws error to console if searchEntry bar is blank.
-//   if (!searchEntry) {
-//     console.error('You need a search input value!');
-//     return;
-//   }
-
-//   // Fetches from the geo-coordinates API and defines the lat and lon variables.
-//   fetch(geoCoordinates)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       // console.log(data);
-//       for (var i = 0; i < data.length; i++) {
-//         lat = data[i].lat;
-//         // console.log(lat);
-//         lon = data[i].lon;
-//         // console.log(lon);
-//         var citySearched = data[i].name + ', ' + data[i].state + ', ' + data[i].country;
-//         // console.log(citySearched);
-
+  // Fetches from the geo-coordinates API and defines the lat and lon variables.
+  fetch(geoCoordinates)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        lat = data[i].lat;
+         console.log(lat);
+        lon = data[i].lon;
+         console.log(lon);
+        var citySearched = data[i].name + ', ' + data[i].state + ', ' + data[i].country;
+        console.log(citySearched);
+      }})};
 //         // This section creates a field of past searches and displays them below search bar
 //         var pastSearch = document.createElement('button');
 //         pastSearch.classList.add('btn', 'btn-primary', 'btn-block');
