@@ -63,11 +63,11 @@ $(".searchBtn").click(function () {
 
 
 
-/* 
-  ************
-Dump of weather API code from Brian
-  ************
-*/
+// /* 
+//   ************
+// Dump of weather API code from Brian
+//   ************
+// */
 
 //   // All code is written in a single function that fires when the search button is clicked.
 // function searchButton(event) {
@@ -129,36 +129,36 @@ Dump of weather API code from Brian
 //           // Third fetch now to the 5 day forecast API, again using the lat and lon variables from above.
 //           var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
-          fetch(fiveDayForecast)
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              console.log(data);
-              fiveDayHeadingEl.textContent = 'Five Day Forecast:';
+//           fetch(fiveDayForecast)
+//             .then(function (response) {
+//               return response.json();
+//             })
+//             .then(function (data) {
+//               console.log(data);
+//               fiveDayHeadingEl.textContent = 'Five Day Forecast:';
               
-              /* Each section aligns to one of the display columns for the five day forecast. Is there a more
-              efficient method than this? The index numbers selected are 24 hours ahead of the user's current
-              time so will always show the weather for the time they're searching.
-              */
-              var dayOneDate = data.list[7].dt_txt;
-              dayOneEl.textContent = dayOneDate;
-              var dayOneImage = document.createElement('img');
-              var dayOneIcon = data.list[7].weather[0].icon;
-              dayOneImage.src = 'http://openweathermap.org/img/wn/' + dayOneIcon + '@2x.png'
-              dayOneEl.appendChild(dayOneImage);
-              var dayOneTemp = document.createElement('h5');
-              var dayOneTempReading = data.list[7].main.temp
-              dayOneTemp.textContent = 'Temp: ' + dayOneTempReading + ' ° C';
-              dayOneEl.appendChild(dayOneTemp);
-              var dayOneWind = document.createElement('h5');
-              var dayOneWindReading = data.list[7].wind.speed
-              dayOneWind.textContent = 'Wind: ' + dayOneWindReading + ' kph';
-              dayOneEl.appendChild(dayOneWind);
-              var dayOneHumidity = document.createElement('h5');
-              var dayOneHumidityReading = data.list[7].main.humidity
-              dayOneHumidity.textContent = 'Humidity: ' + dayOneHumidityReading + ' %';
-              dayOneEl.appendChild(dayOneHumidity);
+//               /* Each section aligns to one of the display columns for the five day forecast. Is there a more
+//               efficient method than this? The index numbers selected are 24 hours ahead of the user's current
+//               time so will always show the weather for the time they're searching.
+//               */
+//               var dayOneDate = data.list[7].dt_txt;
+//               dayOneEl.textContent = dayOneDate;
+//               var dayOneImage = document.createElement('img');
+//               var dayOneIcon = data.list[7].weather[0].icon;
+//               dayOneImage.src = 'http://openweathermap.org/img/wn/' + dayOneIcon + '@2x.png'
+//               dayOneEl.appendChild(dayOneImage);
+//               var dayOneTemp = document.createElement('h5');
+//               var dayOneTempReading = data.list[7].main.temp
+//               dayOneTemp.textContent = 'Temp: ' + dayOneTempReading + ' ° C';
+//               dayOneEl.appendChild(dayOneTemp);
+//               var dayOneWind = document.createElement('h5');
+//               var dayOneWindReading = data.list[7].wind.speed
+//               dayOneWind.textContent = 'Wind: ' + dayOneWindReading + ' kph';
+//               dayOneEl.appendChild(dayOneWind);
+//               var dayOneHumidity = document.createElement('h5');
+//               var dayOneHumidityReading = data.list[7].main.humidity
+//               dayOneHumidity.textContent = 'Humidity: ' + dayOneHumidityReading + ' %';
+//               dayOneEl.appendChild(dayOneHumidity);
 
 
 //               var dayTwoDate = data.list[15].dt_txt;
