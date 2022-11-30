@@ -106,7 +106,7 @@ console.log("hi")
          console.log(lon);
         var citySearched = data[i].name + ', ' + data[i].state + ', ' + data[i].country;
         console.log(citySearched);
-      }})};
+      }
 //         // This section creates a field of past searches and displays them below search bar
 //         var pastSearch = document.createElement('button');
 //         pastSearch.classList.add('btn', 'btn-primary', 'btn-block');
@@ -114,15 +114,18 @@ console.log("hi")
 //         searchFieldEl.appendChild(pastSearch);
 //       }
 
-//       // Calls to the current weather API using the lat and lon gained from the geo-location API above
-//       var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
+      // Calls to the current weather API using the lat and lon gained from the geo-location API above
+      var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
-//       fetch(currentWeather)
-//         .then(function (response) {
-//           return response.json();
-//         })
-//         .then(function (data) {
-//           // console.log(data);
+      fetch(currentWeather)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data);
+        })
+      })
+    }
 //           cityNameEl.textContent = data.name + '   ';
 //           var icon = data.weather[0].icon;
 //           document.querySelector('#weather-icon').src = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
