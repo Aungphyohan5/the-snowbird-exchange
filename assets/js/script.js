@@ -1,53 +1,73 @@
 
 
 //This is the autocomplete for the search bar. 
-$( function() {
-    var availableCities = [
-      
-      "Miami",
-      "Cancun",
-      "Paris",
-      "London",
-      "Los Angeles"
-     
-    ];
-    $( "#city" ).autocomplete({
-      source: availableCities
-    });
-  } );
+$(function () {
+  var availableCities = [
 
-//on click function for search
-  $(".searchBtn").click(function(){
-    city = $("#city").val();
-   //hard code depending on city chosen to set other variables
-    if (city=="Miami") {
-   console.log("Miami") ;
-   visitCountry = "United States";
-    } else if (city=="Cancun"){
-      console.log("Cancun");
-      visitCountry = "Mexico";
-    }
-    else if (city=="Paris"){
-      console.log("Paris ");
-      visitCountry="France";
-    }
-    else if (city=="London"){
-      console.log("london");
-      visitCountry="England";
-    }
-    else if (city=="Los Angelas"){
-      console.log("Los Angelas");
-      visitCountry="United States";
-    }
+    "Miami",
+    "Cancun",
+    "Paris",
+    "London",
+    "Los Angeles"
+
+  ];
+  $("#city").autocomplete({
+    source: availableCities
   });
+});
+function getApi() {
+  var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
+
+  fetch(requestURL)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data)
+
+
+      city = $("#city").val();
+
+      if (city == "Miami") {
+        console.log("Miami");
+        visitCountry = "United States";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+      } else if (city == "Cancun") {
+        console.log("Cancun");
+        visitCountry = "Mexico";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+      }
+      else if (city == "Paris") {
+        console.log("Paris ");
+        visitCountry = "France";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR + " EUR - France Euro")
+      }
+      else if (city == "London") {
+        console.log("london");
+        visitCountry = "England";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP + " GBP - Pound Sterling")
+      }
+      else if (city == "Los Angeles") {
+        console.log("Los Angeles");
+        viitCountry = "United States";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+      }
+
+    })
+}
+
+$(".searchBtn").click(function () {
+  getApi()
+});
 
 
 
-//   /* 
-//     ************
-//   Dump of weather API code from Brian
-//     ************
-//   */
+/* 
+  ************
+Dump of weather API code from Brian
+  ************
+*/
 
 //   // All code is written in a single function that fires when the search button is clicked.
 // function searchButton(event) {
@@ -109,36 +129,36 @@ $( function() {
 //           // Third fetch now to the 5 day forecast API, again using the lat and lon variables from above.
 //           var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
-//           fetch(fiveDayForecast)
-//             .then(function (response) {
-//               return response.json();
-//             })
-//             .then(function (data) {
-//               console.log(data);
-//               fiveDayHeadingEl.textContent = 'Five Day Forecast:';
+          fetch(fiveDayForecast)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              console.log(data);
+              fiveDayHeadingEl.textContent = 'Five Day Forecast:';
               
-//               /* Each section aligns to one of the display columns for the five day forecast. Is there a more
-//               efficient method than this? The index numbers selected are 24 hours ahead of the user's current
-//               time so will always show the weather for the time they're searching.
-//               */
-//               var dayOneDate = data.list[7].dt_txt;
-//               dayOneEl.textContent = dayOneDate;
-//               var dayOneImage = document.createElement('img');
-//               var dayOneIcon = data.list[7].weather[0].icon;
-//               dayOneImage.src = 'http://openweathermap.org/img/wn/' + dayOneIcon + '@2x.png'
-//               dayOneEl.appendChild(dayOneImage);
-//               var dayOneTemp = document.createElement('h5');
-//               var dayOneTempReading = data.list[7].main.temp
-//               dayOneTemp.textContent = 'Temp: ' + dayOneTempReading + ' ° C';
-//               dayOneEl.appendChild(dayOneTemp);
-//               var dayOneWind = document.createElement('h5');
-//               var dayOneWindReading = data.list[7].wind.speed
-//               dayOneWind.textContent = 'Wind: ' + dayOneWindReading + ' kph';
-//               dayOneEl.appendChild(dayOneWind);
-//               var dayOneHumidity = document.createElement('h5');
-//               var dayOneHumidityReading = data.list[7].main.humidity
-//               dayOneHumidity.textContent = 'Humidity: ' + dayOneHumidityReading + ' %';
-//               dayOneEl.appendChild(dayOneHumidity);
+              /* Each section aligns to one of the display columns for the five day forecast. Is there a more
+              efficient method than this? The index numbers selected are 24 hours ahead of the user's current
+              time so will always show the weather for the time they're searching.
+              */
+              var dayOneDate = data.list[7].dt_txt;
+              dayOneEl.textContent = dayOneDate;
+              var dayOneImage = document.createElement('img');
+              var dayOneIcon = data.list[7].weather[0].icon;
+              dayOneImage.src = 'http://openweathermap.org/img/wn/' + dayOneIcon + '@2x.png'
+              dayOneEl.appendChild(dayOneImage);
+              var dayOneTemp = document.createElement('h5');
+              var dayOneTempReading = data.list[7].main.temp
+              dayOneTemp.textContent = 'Temp: ' + dayOneTempReading + ' ° C';
+              dayOneEl.appendChild(dayOneTemp);
+              var dayOneWind = document.createElement('h5');
+              var dayOneWindReading = data.list[7].wind.speed
+              dayOneWind.textContent = 'Wind: ' + dayOneWindReading + ' kph';
+              dayOneEl.appendChild(dayOneWind);
+              var dayOneHumidity = document.createElement('h5');
+              var dayOneHumidityReading = data.list[7].main.humidity
+              dayOneHumidity.textContent = 'Humidity: ' + dayOneHumidityReading + ' %';
+              dayOneEl.appendChild(dayOneHumidity);
 
 
 //               var dayTwoDate = data.list[15].dt_txt;
