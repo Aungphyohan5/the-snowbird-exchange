@@ -1,3 +1,9 @@
+var cityNameEl = document.querySelector('#city-name');
+var tempEl = document.querySelector('#temp');
+var windEl = document.querySelector('#wind');
+var humidityEl = document.querySelector('#humidity');
+var fiveDayHeadingEl = document.querySelector("#five-day-heading");
+
 let city = "";
 
 //This is the autocomplete for the search bar. 
@@ -84,12 +90,12 @@ function displayCurrentWeather(lat, lon, apiKey) {
     })
     .then(function (data) {
       console.log(data);
-    //   cityNameEl.textContent = data.name + '   ' + dayjs().format('YYYY-MM-DD') + '   ';
-    //   var icon = data.weather[0].icon;
-    //   document.querySelector('#weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
-    //   tempEl.textContent = 'Current Temperature: ' + data.main.temp + ' ° C';
-    //   windEl.textContent = 'Current Wind Speed: ' + data.wind.speed + ' kph';
-    //   humidityEl.textContent = 'Current Humidity: ' + data.main.humidity + ' %';
+      cityNameEl.textContent = data.name + '   ';
+      var icon = data.weather[0].icon;
+      document.querySelector('#weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
+      tempEl.textContent = 'Current Temperature: ' + data.main.temp + ' ° C';
+      windEl.textContent = 'Current Wind Speed: ' + data.wind.speed + ' kph';
+      humidityEl.textContent = 'Current Humidity: ' + data.main.humidity + ' %';
     })
 }
 
