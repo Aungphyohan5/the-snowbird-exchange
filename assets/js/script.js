@@ -3,6 +3,7 @@ var tempEl = document.querySelector('#temp');
 var windEl = document.querySelector('#wind');
 var humidityEl = document.querySelector('#humidity');
 var fiveDayHeadingEl = document.querySelector("#five-day-heading");
+var forecastEl = document.querySelector('#fiveDayForecast');
 
 let city = "";
 
@@ -109,7 +110,7 @@ function displayForecast(lat, lon, apiKey) {
     })
     .then(function (data) {
       console.log(data);
-      // fiveDayHeadingEl.textContent = 'Five Day Forecast:';
+      fiveDayHeadingEl.textContent = 'Five Day Forecast:';
 
       /* This if statement removes any of the Five Day forecast elements that existed from a previous search;
       before adding this more would just be added and it would create a longer and longer list for every search.
@@ -127,31 +128,31 @@ function displayForecast(lat, lon, apiKey) {
       bootstrap and displays in five columns. Finally, it appends the created dayElement child to the
       forecastEL section in the HTML.
       */
-      // for (var i = 0; i < data.list.length; i++) {
-      //   var date = data.list[i].dt_txt;
-      //   if (date.endsWith('15:00:00')) {
-      //     var dayElement = document.createElement('div');
-      //     dayElement.textContent = date;
-      //     var image = document.createElement('img');
-      //     var icon = data.list[i].weather[0].icon;
-      //     image.src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
-      //     dayElement.appendChild(image);
-      //     var temp = document.createElement('h5');
-      //     var tempReading = data.list[i].main.temp
-      //     temp.textContent = 'Temp: ' + tempReading + ' ° C';
-      //     dayElement.appendChild(temp);
-      //     var wind = document.createElement('h5');
-      //     var windReading = data.list[i].wind.speed
-      //     wind.textContent = 'Wind: ' + windReading + ' kph';
-      //     dayElement.appendChild(wind);
-      //     var humidity = document.createElement('h5');
-      //     var humidityReading = data.list[i].main.humidity
-      //     humidity.textContent = 'Humidity: ' + humidityReading + ' %';
-      //     dayElement.appendChild(humidity);
-      //     dayElement.classList.add('col', 'dayElement')
-      //     forecastEl.appendChild(dayElement);
-        // }
-    //   }
+      for (var i = 0; i < data.list.length; i++) {
+        var date = data.list[i].dt_txt;
+        if (date.endsWith('15:00:00')) {
+          var dayElement = document.createElement('div');
+          dayElement.textContent = date;
+          var image = document.createElement('img');
+          var icon = data.list[i].weather[0].icon;
+          image.src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
+          dayElement.appendChild(image);
+          var temp = document.createElement('h5');
+          var tempReading = data.list[i].main.temp
+          temp.textContent = 'Temp: ' + tempReading + ' ° C';
+          dayElement.appendChild(temp);
+          var wind = document.createElement('h5');
+          var windReading = data.list[i].wind.speed
+          wind.textContent = 'Wind: ' + windReading + ' kph';
+          dayElement.appendChild(wind);
+          var humidity = document.createElement('h5');
+          var humidityReading = data.list[i].main.humidity
+          humidity.textContent = 'Humidity: ' + humidityReading + ' %';
+          dayElement.appendChild(humidity);
+          dayElement.classList.add('column', 'dayElement')
+          forecastEl.appendChild(dayElement);
+        }
+      }
     })
 }
 
