@@ -81,24 +81,24 @@ Second Code Dump from Brian
 ********
 */
 
-function displayCurrentWeather(lat, lon, apiKey) {
-  // Calls to the current weather API using the lat and lon gained from the geo-location API
-  var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
+// function displayCurrentWeather(lat, lon, apiKey) {
+//   // Calls to the current weather API using the lat and lon gained from the geo-location API
+//   var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
-  fetch(currentWeather)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      cityNameEl.textContent = data.name + '   ';
-      var icon = data.weather[0].icon;
-      document.querySelector('#weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
-      tempEl.textContent = 'Current Temperature: ' + data.main.temp + ' ° C';
-      windEl.textContent = 'Current Wind Speed: ' + data.wind.speed + ' kph';
-      humidityEl.textContent = 'Current Humidity: ' + data.main.humidity + ' %';
-    })
-}
+//   fetch(currentWeather)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       cityNameEl.textContent = data.name + '   ';
+//       var icon = data.weather[0].icon;
+//       document.querySelector('#weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
+//       tempEl.textContent = 'Current Temperature: ' + data.main.temp + ' ° C';
+//       windEl.textContent = 'Current Wind Speed: ' + data.wind.speed + ' kph';
+//       humidityEl.textContent = 'Current Humidity: ' + data.main.humidity + ' %';
+//     })
+// }
 
 function displayForecast(lat, lon, apiKey) {
   // Third fetch now to the 5 day forecast API, again using the lat and lon variables from the geo-location API.
@@ -184,7 +184,7 @@ function searchButton() {
         /* Each function written above is called here so that the variables generated within this function can
         be passed into the other function and used.
         */
-        displayCurrentWeather(lat, lon, apiKey);
+        //displayCurrentWeather(lat, lon, apiKey);
         displayForecast(lat, lon, apiKey);
       }
     })
