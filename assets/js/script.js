@@ -34,29 +34,29 @@ function getApi() {
         console.log("Miami");
         visitCountry = "United States";
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
       } else if (city == "Cancun") {
         console.log("Cancun");
         visitCountry = "Mexico";
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso ")
       }
       else if (city == "Paris") {
         console.log("Paris ");
         visitCountry = "France";
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR + " EUR - France Euro")
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro")
       }
       else if (city == "London") {
         console.log("london");
         visitCountry = "England";
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP + " GBP - Pound Sterling")
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
       }
       else if (city == "Los Angeles") {
         console.log("Los Angeles");
-        viitCountry = "United States";
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD + " USD - United States Dollar")
+        visitCountry = "United States";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
       }
 
     })
