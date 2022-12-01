@@ -15,7 +15,7 @@ $(function () {
     "Cancun",
     "Paris",
     "London",
-    "Los Angeles"
+    "Rio de Janeiro"
 
   ];
   $("#city").autocomplete({
@@ -60,10 +60,10 @@ function getApi() {
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
       }
-      else if (city == "Los Angeles") {
-        console.log("Los Angeles");
+      else if (city == "Rio de Janeiro") {
+        console.log("Rio de Janeiro");
         visitCountry = "United States";
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
       }
 
     })
