@@ -63,6 +63,7 @@ function searchHistory() {
 
 }
 
+city = $("#city").val();
 
 function getApi() {
   // fetch request gets a list of currency exchange rate
@@ -77,14 +78,14 @@ function getApi() {
       console.log(data)
 
 
-      city = $("#city").val();
+
       //hard code depending on city chosen to set other variables
       if (city == "Miami") {
         console.log("Miami");
         visitCountry = "United States";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
-        locationPictureEL.classList.add('cancun-image');
+        locationPictureEL.classList.add('miami-image');
       } else if (city == "Cancun") {
         console.log("Cancun");
         visitCountry = "Mexico";
@@ -98,34 +99,26 @@ function getApi() {
         visitCountry = "France";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro")
+        locationPictureEL.classList.add('paris-image');
       }
       else if (city == "London") {
         console.log("london");
         visitCountry = "England";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
+        locationPictureEL.classList.add('london-image');
       }
       else if (city == "Rio de Janeiro") {
         console.log("Rio de Janeiro");
         visitCountry = "United States";
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
+        locationPictureEL.classList.add('rio-image');
       }
 
     })
 }
 
-function searchHistory() {
-  var pEl = $("<p>")
-  var btnEl = $('<button>');
-  btnEl.attr('id', 'extraBtn');
-  btnEl.addClass("ui-button ui-widget ui-corner-all pastSearch");
-  btnEl.text(city);
-  pEl.append(btnEl);
-  $("#search-history").prepend(pEl);
 
-  $(".pastSearch").click(function(){})
-
-}
 
 /*
 ********
@@ -241,6 +234,10 @@ function searchButton() {
       }
     })
 }
+
+$("#clear-history").on("click", function (event) {
+  $("#search-history").empty();
+});
 
 /*
 ********

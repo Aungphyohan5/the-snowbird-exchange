@@ -2,7 +2,7 @@
     border: solid 1px;
 } */
 /* Class and ID Styling */
-.departures-image { 
+.departures-image {
     background-image: url('../images/departures2.jpg');
     background-size: cover;
 }
@@ -17,6 +17,28 @@
     background-size: cover;
 }
 
+.london-image {
+    background-image: url('../images/London.jpg');
+    background-size: cover;
+}
+
+.paris-image {
+    background-image: url('../images/Paris.jpg');
+    background-size: contain;
+}
+
+.rio-image {
+    background-image: url('../images/Rio.jpg');
+    background-size: cover;
+}
+
+.miami-image {
+    background-image: url('../images/miami.jpg');
+    background-size: cover;
+}
+
 #search-history {
-    margin-top: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
 }
