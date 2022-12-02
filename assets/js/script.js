@@ -223,6 +223,10 @@ function searchButton() {
     })
 }
 
+$("#clear-history").on("click", function (event) {
+  $("#search-history").empty();
+});
+
 /*
 ********
 End Second Code Dump
