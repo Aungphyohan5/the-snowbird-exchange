@@ -3,7 +3,8 @@
 } */
 /* Class and ID Styling */
 .departures { 
-    background-image: url('../images/departures.jpg'); 
+    background-image: url('../images/departures2.jpg');
+    background-size: cover;
 }
 
 #search-history {
