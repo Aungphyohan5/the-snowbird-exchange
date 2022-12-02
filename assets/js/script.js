@@ -5,7 +5,7 @@ var humidityEl = document.querySelector('#humidity');
 var fiveDayHeadingEl = document.querySelector("#five-day-heading");
 var forecastEl = document.querySelector('#fiveDayForecast');
 var locationPictureEL = document.querySelector('#location-picture-display')
-
+var languagePref = ""
 let city = "";
 
 //This is the autocomplete for the search bar. 
@@ -32,7 +32,16 @@ $(".searchBtn").click(function () {
   searchHistory()
 
 });
-
+$(".englishBtn").click(function(){
+  languagePref = "English";
+  localStorage.setItem("language",languagePref);
+  
+})
+$(".frenchBtn").click(function(){
+  languagePref = "French";
+  localStorage.setItem("language",languagePref);
+console.log("french")
+})
 function searchHistory() {
   var pEl = $("<p>")
   var btnEl = $('<button>');
