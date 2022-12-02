@@ -1,14 +1,11 @@
 /* * {
     border: solid 1px;
 } */
-
-<<<<<<< HEAD
+/* Class and ID Styling */
 .departures { 
     background-image: url('../images/departures.jpg'); 
-    /* background-size: contain;  */
-=======
-/* ID and Class Styling */
+}
+
 #search-history {
     margin-top: 10px;
->>>>>>> d769f0046c149f88b3ba58e809de1049821d68d3
 }
