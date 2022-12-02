@@ -22,6 +22,38 @@ $(function () {
     source: availableCities
   });
 });
+
+// on click function for search
+$(".searchBtn").click(function () {
+  city = $("#city").val();
+  getApi();
+  searchButton();
+  searchHistory()
+
+});
+
+function searchHistory() {
+  var pEl = $("<p>")
+  var btnEl = $('<button>');
+  btnEl.attr('id', 'extraBtn');
+  btnEl.addClass("ui-button ui-widget ui-corner-all");
+  btnEl.text(city);
+  pEl.append(btnEl);
+  $("#search-history").prepend(pEl);
+
+  $("#extraBtn").on("click", function () {
+    city = $(this).text();
+    console.log(city)
+
+    getApi();
+    searchButton();
+
+  });
+
+
+}
+
+
 function getApi() {
   // fetch request gets a list of currency exchange rate
   var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
@@ -69,13 +101,6 @@ function getApi() {
 
     })
 }
-// on click function for search
-$(".searchBtn").click(function () {
-  city = $("#city").val();
-  getApi();
-  searchButton();
-  searchHistory()
-});
 
 function searchHistory() {
   var pEl = $("<p>")
