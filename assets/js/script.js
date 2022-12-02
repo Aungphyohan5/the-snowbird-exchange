@@ -8,6 +8,15 @@ var locationPictureEL = document.querySelector('#location-picture-display')
 var languagePref = ""
 let city = "";
 
+//Gets current language setting from local Storage. 
+language = localStorage.getItem("language")
+if (language=="English") {
+    console.log("Language set to English");
+    
+} else if (language=="French"){
+console.log("Language set to French. French currently not available Please come back soon.")    
+};
+
 //This is the autocomplete for the search bar. 
 $(function () {
   var availableCities = [
