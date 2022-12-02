@@ -4,6 +4,7 @@ var windEl = document.querySelector('#wind');
 var humidityEl = document.querySelector('#humidity');
 var fiveDayHeadingEl = document.querySelector("#five-day-heading");
 var forecastEl = document.querySelector('#fiveDayForecast');
+var locationPictureEL = document.querySelector('#location-picture-display')
 
 let city = "";
 
@@ -74,12 +75,14 @@ function getApi() {
         visitCountry = "United States";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
-
+        locationPictureEL.classList.add('cancun-image');
       } else if (city == "Cancun") {
         console.log("Cancun");
         visitCountry = "Mexico";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso ")
+        locationPictureEL.classList.add('cancun-image');
+
       }
       else if (city == "Paris") {
         console.log("Paris ");
