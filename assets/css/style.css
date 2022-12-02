@@ -1,3 +1,8 @@
 /* * {
     border: solid 1px;
 } */
+
+.departures { 
+    background-image: url('../images/departures.jpg'); 
+    /* background-size: contain;  */
+}
