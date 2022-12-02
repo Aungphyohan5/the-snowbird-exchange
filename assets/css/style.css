@@ -1,3 +1,8 @@
 /* * {
     border: solid 1px;
 } */
+
+/* ID and Class Styling */
+#search-history {
+    margin-top: 10px;
+}
