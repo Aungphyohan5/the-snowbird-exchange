@@ -54,6 +54,7 @@ function searchHistory() {
 
 }
 
+city = $("#city").val();
 
 function getApi() {
   // fetch request gets a list of currency exchange rate
@@ -68,7 +69,7 @@ function getApi() {
       console.log(data)
 
 
-      city = $("#city").val();
+
       //hard code depending on city chosen to set other variables
       if (city == "Miami") {
         console.log("Miami");
@@ -108,18 +109,7 @@ function getApi() {
     })
 }
 
-function searchHistory() {
-  var pEl = $("<p>")
-  var btnEl = $('<button>');
-  btnEl.attr('id', 'extraBtn');
-  btnEl.addClass("ui-button ui-widget ui-corner-all pastSearch");
-  btnEl.text(city);
-  pEl.append(btnEl);
-  $("#search-history").prepend(pEl);
 
-  $(".pastSearch").click(function(){})
-
-}
 
 /*
 ********
@@ -235,6 +225,10 @@ function searchButton() {
       }
     })
 }
+
+$("#clear-history").on("click", function (event) {
+  $("#search-history").empty();
+});
 
 /*
 ********
