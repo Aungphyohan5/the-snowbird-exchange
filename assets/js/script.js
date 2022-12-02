@@ -80,17 +80,26 @@ function getApi() {
 
 
       //hard code depending on city chosen to set other variables
+      var picClass = locationPictureEL.classList
+      var picClassList = ['miami-image', 'cancun-image', 'london-image', 'rio-image', 'paris-image'];
       if (city == "Miami") {
         console.log("Miami");
         visitCountry = "United States";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
+        if (picClass != 'miami-image') {
+          // picClass.remove('cancun-image', 'paris-image', 'london-image', 'rio-image');
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('miami-image');
       } else if (city == "Cancun") {
         console.log("Cancun");
         visitCountry = "Mexico";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso ")
+        if (picClass != 'cancun-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('cancun-image');
 
       }
@@ -99,6 +108,9 @@ function getApi() {
         visitCountry = "France";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro")
+        if (picClass != 'paris-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('paris-image');
       }
       else if (city == "London") {
@@ -106,12 +118,18 @@ function getApi() {
         visitCountry = "England";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
+        if (picClass != 'london-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('london-image');
       }
       else if (city == "Rio de Janeiro") {
         console.log("Rio de Janeiro");
         visitCountry = "United States";
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
+        if (picClass != 'rio-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('rio-image');
       }
 
