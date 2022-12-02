@@ -23,7 +23,7 @@ $(function () {
   });
 });
 function getApi() {
-   // fetch request gets a list of currency exchange rate
+  // fetch request gets a list of currency exchange rate
   var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
 
   fetch(requestURL)
@@ -36,12 +36,13 @@ function getApi() {
 
 
       city = $("#city").val();
-//hard code depending on city chosen to set other variables
+      //hard code depending on city chosen to set other variables
       if (city == "Miami") {
         console.log("Miami");
         visitCountry = "United States";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
+
       } else if (city == "Cancun") {
         console.log("Cancun");
         visitCountry = "Mexico";
@@ -73,7 +74,20 @@ $(".searchBtn").click(function () {
   city = $("#city").val();
   getApi();
   searchButton();
+  searchHistory()
 });
+
+function searchHistory() {
+  var pEl = $("<p>")
+  var btnEl = $('<button>');
+  btnEl.attr('id', 'extraBtn');
+  btnEl.addClass("ui-button ui-widget ui-corner-all");
+  btnEl.text(city);
+  pEl.append(btnEl);
+  $("#search-history").prepend(pEl);
+
+
+}
 
 /*
 ********
@@ -120,7 +134,7 @@ function displayForecast(lat, lon, apiKey) {
       if (document.contains(document.querySelector('.dayElement'))) {
         document.querySelectorAll('.dayElement').forEach(e => e.remove());
       }
-      
+
       /* This loop combs through the results returned from the five-day forecast API and looks for indices
       that have a dt_txt property that ends with 15:00:00. The endsWith function was suggested by tutor
       Alistair Rowden and was unknown to me before the session. It then creates the data for each returned
