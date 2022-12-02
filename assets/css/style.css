@@ -2,8 +2,18 @@
     border: solid 1px;
 } */
 /* Class and ID Styling */
-.departures { 
+.departures-image { 
     background-image: url('../images/departures2.jpg');
+    background-size: cover;
+}
+
+.five-day-display {
+    height: 800px;
+    width: auto;
+}
+
+.cancun-image {
+    background-image: url('../images/beach-photo.jpg');
     background-size: cover;
 }
 
