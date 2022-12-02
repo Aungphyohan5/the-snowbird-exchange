@@ -17,6 +17,26 @@
     background-size: cover;
 }
 
+.london-image {
+    background-image: url('../images/London.jpg');
+    background-size: cover;
+}
+
+.paris-image {
+    background-image: url('../images/Paris.jpg');
+    background-size: contain;
+}
+
+.rio-image {
+    background-image: url('../images/Rio.jpg');
+    background-size: cover;
+}
+
+.miami-image {
+    background-image: url('../images/miami.jpg');
+    background-size: cover;
+}
+
 #search-history {
     margin-top: 10px;
 }
