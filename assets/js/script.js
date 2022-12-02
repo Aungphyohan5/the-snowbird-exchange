@@ -81,11 +81,12 @@ function searchHistory() {
   var pEl = $("<p>")
   var btnEl = $('<button>');
   btnEl.attr('id', 'extraBtn');
-  btnEl.addClass("ui-button ui-widget ui-corner-all");
+  btnEl.addClass("ui-button ui-widget ui-corner-all pastSearch");
   btnEl.text(city);
   pEl.append(btnEl);
   $("#search-history").prepend(pEl);
 
+  $(".pastSearch").click(function(){})
 
 }
 
