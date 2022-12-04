@@ -126,6 +126,7 @@ function getApi() {
     })
 }
 
+//function to get five day forecast using the lat and lon from the geo api
 function displayForecast(lat, lon, apiKey) {
   var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
