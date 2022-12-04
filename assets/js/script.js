@@ -16,7 +16,7 @@ $(function () {
     "Paris",
     "London",
     "Rio de Janeiro"
- ];
+  ];
   $("#city").autocomplete({
     source: availableCities
   });
@@ -31,14 +31,14 @@ $(".searchBtn").click(function () {
 });
 
 // Language buttons 
-$(".englishBtn").click(function(){
+$(".englishBtn").click(function () {
   languagePref = "English";
-  localStorage.setItem("language",languagePref);
-  })
-$(".frenchBtn").click(function(){
+  localStorage.setItem("language", languagePref);
+})
+$(".frenchBtn").click(function () {
   languagePref = "French";
-  localStorage.setItem("language",languagePref);
-console.log("french currently not available");
+  localStorage.setItem("language", languagePref);
+  console.log("french currently not available");
 })
 
 //Function to add the previously searched cities
@@ -71,26 +71,29 @@ function getApi() {
     .then(function (response) {
       return response.json();
     })
-.then(function (data) {
+    .then(function (data) {
       console.log(data)
       //hard code depending on city chosen to set other variables
       var picClass = locationPictureEL.classList
       var picClassList = ['miami-image', 'cancun-image', 'london-image', 'rio-image', 'paris-image'];
       if (city == "Miami") {
         console.log("Miami");
-       
+
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
+
+        // $('#currencyexchange').text(" $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
+        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar" + '<img src="assets/flag-icon/USA.png" class="icon">')
+
         if (picClass != 'miami-image') {
           picClass.remove(...picClassList);
         }
         locationPictureEL.classList.add('miami-image');
-      } 
+      }
       else if (city == "Cancun") {
         console.log("Cancun");
-        
+
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso ")
+        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso " + '<img src="assets/flag-icon/Mexico.png" class="icon">')
         if (picClass != 'cancun-image') {
           picClass.remove(...picClassList);
         }
@@ -98,8 +101,8 @@ function getApi() {
       }
       else if (city == "Paris") {
         console.log("Paris ");
-         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro")
+        // setting the currency exchange text for h1 element
+        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + "$" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro" + '<img src="assets/flag-icon/France.png" class="icon">')
         if (picClass != 'paris-image') {
           picClass.remove(...picClassList);
         }
@@ -108,7 +111,7 @@ function getApi() {
       else if (city == "London") {
         console.log("london");
         // setting the currency exchange text for h1 element
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
+        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + "$ 1 CAD - Canadian Dollar" + " = " + "$" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling" + '<img src="assets/flag-icon/England.png" class="icon">')
         if (picClass != 'london-image') {
           picClass.remove(...picClassList);
         }
@@ -117,7 +120,8 @@ function getApi() {
       else if (city == "Rio de Janeiro") {
         console.log("Rio de Janeiro");
         visitCountry = "Brasil";
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
+        // setting the currency exchange text for h1 element
+        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real" + '<img src="assets/flag-icon/Brazil.png" class="icon">')
         if (picClass != 'rio-image') {
           picClass.remove(...picClassList);
         }
@@ -181,9 +185,9 @@ function displayForecast(lat, lon, apiKey) {
       }
     })
 }
- // Pulls the value from the text field of the search bar and adds it into the geo-location API to return coordinates.
+// Pulls the value from the text field of the search bar and adds it into the geo-location API to return coordinates.
 function searchButton() {
- 
+
   var searchEntry = city;
   var apiKey = 'cf49844e3f54a62c370a39540478245f';
   var geoCoordinates = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchEntry + '&appid=' + apiKey;

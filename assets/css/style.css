@@ -68,3 +68,11 @@ button:hover {
     height: 30px;
     width: 12fr;
 }
+
+.icon {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
