@@ -5,29 +5,18 @@ var humidityEl = document.querySelector('#humidity');
 var fiveDayHeadingEl = document.querySelector("#five-day-heading");
 var forecastEl = document.querySelector('#fiveDayForecast');
 var locationPictureEL = document.querySelector('#location-picture-display')
-var languagePref = ""
+var languagePref = localStorage.getItem("language");
 let city = "";
-
-//Gets current language setting from local Storage. 
-language = localStorage.getItem("language")
-if (language=="English") {
-    console.log("Language set to English");
-    
-} else if (language=="French"){
-console.log("Language set to French. French currently not available Please come back soon.")    
-};
 
 //This is the autocomplete for the search bar. 
 $(function () {
   var availableCities = [
-
     "Miami",
     "Cancun",
     "Paris",
     "London",
     "Rio de Janeiro"
-
-  ];
+ ];
   $("#city").autocomplete({
     source: availableCities
   });
@@ -39,18 +28,20 @@ $(".searchBtn").click(function () {
   getApi();
   searchButton();
   searchHistory()
-
 });
+
+// Language buttons 
 $(".englishBtn").click(function(){
   languagePref = "English";
   localStorage.setItem("language",languagePref);
-  
-})
+  })
 $(".frenchBtn").click(function(){
   languagePref = "French";
   localStorage.setItem("language",languagePref);
-console.log("french")
+console.log("french currently not available");
 })
+
+//Function to add the previously searched cities
 function searchHistory() {
   var pEl = $("<p>")
   var btnEl = $('<button>');
@@ -60,16 +51,13 @@ function searchHistory() {
   pEl.append(btnEl);
   $("#search-history").prepend(pEl);
 
+  //function to change to the selected city when a previously searched city is clicked.
   $("#extraBtn").on("click", function () {
     city = $(this).text();
     console.log(city)
-
     getApi();
     searchButton();
-
   });
-
-
 }
 
 city = $("#city").val();
@@ -77,57 +65,45 @@ city = $("#city").val();
 function getApi() {
   // fetch request gets a list of currency exchange rate
   var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
-
   fetch(requestURL)
     .then(function (response) {
       return response.json();
     })
-
-    .then(function (data) {
+.then(function (data) {
       console.log(data)
-
-
-
       //hard code depending on city chosen to set other variables
       if (city == "Miami") {
         console.log("Miami");
-        visitCountry = "United States";
+       
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
         locationPictureEL.classList.add('miami-image');
       } else if (city == "Cancun") {
         console.log("Cancun");
-        visitCountry = "Mexico";
+        
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso ")
         locationPictureEL.classList.add('cancun-image');
-
       }
       else if (city == "Paris") {
         console.log("Paris ");
-        visitCountry = "France";
-        // setting the currency exchange text for h1 element
+         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro")
         locationPictureEL.classList.add('paris-image');
       }
       else if (city == "London") {
         console.log("london");
-        visitCountry = "England";
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
         locationPictureEL.classList.add('london-image');
       }
       else if (city == "Rio de Janeiro") {
         console.log("Rio de Janeiro");
-        visitCountry = "United States";
-        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
+       $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
         locationPictureEL.classList.add('rio-image');
       }
-
-    })
+})
 }
-
-
 
 /*
 ********
@@ -154,8 +130,10 @@ Second Code Dump from Brian
 //     })
 // }
 
+
+// Gets the 5 day forecast, using the lat and lon from the geo-location API.
 function displayForecast(lat, lon, apiKey) {
-  // Third fetch now to the 5 day forecast API, again using the lat and lon variables from the geo-location API.
+  
   var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
   fetch(fiveDayForecast)
@@ -209,9 +187,9 @@ function displayForecast(lat, lon, apiKey) {
       }
     })
 }
-
+ // Pulls the value from the text field of the search bar and adds it into the geo-location API to return coordinates.
 function searchButton() {
-  // Pulls the value from the text field of the search bar and adds it into the geo-location API to return coordinates.
+ 
   var searchEntry = city;
   var apiKey = 'cf49844e3f54a62c370a39540478245f';
   var geoCoordinates = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchEntry + '&appid=' + apiKey;
@@ -243,7 +221,7 @@ function searchButton() {
       }
     })
 }
-
+//function to clear search history 
 $("#clear-history").on("click", function (event) {
   $("#search-history").empty();
 });
