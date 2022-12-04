@@ -58,6 +58,8 @@ function searchHistory() {
     getApi();
     searchButton();
   });
+
+
 }
 
 city = $("#city").val();
@@ -72,68 +74,59 @@ function getApi() {
 .then(function (data) {
       console.log(data)
       //hard code depending on city chosen to set other variables
+      var picClass = locationPictureEL.classList
+      var picClassList = ['miami-image', 'cancun-image', 'london-image', 'rio-image', 'paris-image'];
       if (city == "Miami") {
         console.log("Miami");
        
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇺🇸 $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
+        if (picClass != 'miami-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('miami-image');
-      } else if (city == "Cancun") {
+      } 
+      else if (city == "Cancun") {
         console.log("Cancun");
         
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso ")
+        if (picClass != 'cancun-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('cancun-image');
       }
       else if (city == "Paris") {
         console.log("Paris ");
          // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🇲🇫 $" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro")
+        if (picClass != 'paris-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('paris-image');
       }
       else if (city == "London") {
         console.log("london");
         // setting the currency exchange text for h1 element
         $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " 🏴󠁧󠁢󠁥󠁮󠁧󠁿 $" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling")
+        if (picClass != 'london-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('london-image');
       }
       else if (city == "Rio de Janeiro") {
         console.log("Rio de Janeiro");
-       $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
+        visitCountry = "Brasil";
+        $('#currencyexchange').text("🇨🇦 $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real")
+        if (picClass != 'rio-image') {
+          picClass.remove(...picClassList);
+        }
         locationPictureEL.classList.add('rio-image');
       }
-})
+    })
 }
 
-/*
-********
-Second Code Dump from Brian
-********
-*/
-
-// function displayCurrentWeather(lat, lon, apiKey) {
-//   // Calls to the current weather API using the lat and lon gained from the geo-location API
-//   var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
-
-//   fetch(currentWeather)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//       cityNameEl.textContent = data.name + '   ';
-//       var icon = data.weather[0].icon;
-//       document.querySelector('#weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
-//       tempEl.textContent = 'Current Temperature: ' + data.main.temp + ' ° C';
-//       windEl.textContent = 'Current Wind Speed: ' + data.wind.speed + ' kph';
-//       humidityEl.textContent = 'Current Humidity: ' + data.main.humidity + ' %';
-//     })
-// }
-
-
-// Gets the 5 day forecast, using the lat and lon from the geo-location API.
 function displayForecast(lat, lon, apiKey) {
-  
   var fiveDayForecast = 'https://api.openweathermap.org/data/2.5/forecast/?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric';
 
   fetch(fiveDayForecast)
@@ -156,8 +149,8 @@ function displayForecast(lat, lon, apiKey) {
       /* This loop combs through the results returned from the five-day forecast API and looks for indices
       that have a dt_txt property that ends with 15:00:00. The endsWith function was suggested by tutor
       Alistair Rowden and was unknown to me before the session. It then creates the data for each returned
-      index and adds them to the browser, adding the bootstrap class 'col' so that it functions with the
-      bootstrap and displays in five columns. Finally, it appends the created dayElement child to the
+      index and adds them to the browser, adding the bulma class 'column' so that it functions with the
+      bulma CSS and displays in five columns. Finally, it appends the created dayElement child to the
       forecastEL section in the HTML.
       */
       for (var i = 0; i < data.list.length; i++) {
@@ -211,12 +204,6 @@ function searchButton() {
         var lat = data[i].lat;
         // console.log(lat);
         var lon = data[i].lon;
-        // console.log(lon);
-        var citySearched = data[i].name + ', ' + data[i].state + ', ' + data[i].country;
-        /* Each function written above is called here so that the variables generated within this function can
-        be passed into the other function and used.
-        */
-        //displayCurrentWeather(lat, lon, apiKey);
         displayForecast(lat, lon, apiKey);
       }
     })
@@ -225,9 +212,3 @@ function searchButton() {
 $("#clear-history").on("click", function (event) {
   $("#search-history").empty();
 });
-
-/*
-********
-End Second Code Dump
-********
-*/

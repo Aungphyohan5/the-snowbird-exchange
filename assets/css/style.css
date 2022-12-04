@@ -1,6 +1,11 @@
 /* * {
     border: solid 1px;
 } */
+
+button:hover {
+    cursor: pointer;
+}
+
 /* Class and ID Styling */
 .departures-image {
     background-image: url('../images/departures2.jpg');
@@ -33,7 +38,7 @@
 }
 
 .miami-image {
-    background-image: url('../images/miami.jpg');
+    background-image: url('../images/Miami2.jpg');
     background-size: cover;
 }
 
@@ -41,4 +46,25 @@
     margin: 10px;
     display: flex;
     flex-direction: row;
+}
+
+#city {
+    height: 30px;
+    width: 220px;
+}
+
+.searchBtn {
+    background-color: #279e33;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+}
+
+#clear-history {
+    background-color: #E0A800;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    width: 12fr;
 }
