@@ -25,34 +25,38 @@ $(function () {
 // on click function for search
 $(".searchBtn").click(function () {
   city = $("#city").val();
+  if (!city) {
+    return;
+  }
   getApi();
   searchButton();
-  searchHistory()
+  searchHistory();
+  $("#city").val("");
 });
 
 // Language modal 
-$( function() {
-  $( "#dialog-confirm" ).dialog({
+$(function () {
+  $("#dialog-confirm").dialog({
     resizable: false,
     height: "auto",
     width: 400,
     modal: true,
     buttons: {
-      "English": function() {
+      "English": function () {
         languagePref = "English";
         localStorage.setItem("language", languagePref);
-        $( this ).dialog( "close" );
+        $(this).dialog("close");
       },
-      "French": function() {
+      "French": function () {
         languagePref = "French";
         localStorage.setItem("language", languagePref);
-        $( this ).dialog( "close" );
+        $(this).dialog("close");
         console.log("I hate french");
         window.location.href = 'https://google.ca/'
       }
     }
   });
-} );
+});
 
 
 //Function to add the previously searched cities
