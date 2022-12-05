@@ -12,6 +12,16 @@ button:hover {
     background-size: cover;
 }
 
+.weather-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forecast-text {
+    text-align: center;
+}
+
 .five-day-display {
     height: 800px;
     width: auto;

@@ -162,8 +162,10 @@ function displayForecast(lat, lon, apiKey) {
         var date = data.list[i].dt_txt;
         if (date.endsWith('15:00:00')) {
           var dayElement = document.createElement('div');
+          dayElement.classList.add('forecast-text');
           dayElement.textContent = date;
           var image = document.createElement('img');
+          image.classList.add('weather-icon');
           var icon = data.list[i].weather[0].icon;
           image.src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
           dayElement.appendChild(image);
