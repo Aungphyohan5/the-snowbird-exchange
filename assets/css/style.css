@@ -88,9 +88,10 @@ button:hover {
 .icon {
     padding: 0;
     margin: 0;
-    height: 20px;
+    height: 40px;
+    width: 40px;
     position: relative;
-    top: 2px;
+    top: 6px;
 }
 
 .forecast-display-colour {
