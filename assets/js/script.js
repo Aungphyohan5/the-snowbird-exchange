@@ -162,7 +162,6 @@ function displayForecast(lat, lon, apiKey) {
         var date = data.list[i].dt_txt;
         if (date.endsWith('15:00:00')) {
           var dayElement = document.createElement('div');
-          dayElement.classList.add('forecast-text');
           dayElement.textContent = date;
           var image = document.createElement('img');
           image.classList.add('weather-icon');
@@ -181,7 +180,7 @@ function displayForecast(lat, lon, apiKey) {
           var humidityReading = data.list[i].main.humidity
           humidity.textContent = 'Humidity: ' + humidityReading + ' %';
           dayElement.appendChild(humidity);
-          dayElement.classList.add('column', 'dayElement')
+          dayElement.classList.add('column', 'dayElement', 'forecast-display-colour')
           forecastEl.appendChild(dayElement);
         }
       }
