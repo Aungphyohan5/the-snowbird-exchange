@@ -48,6 +48,7 @@ $( function() {
         localStorage.setItem("language", languagePref);
         $( this ).dialog( "close" );
         console.log("I hate french");
+        window.location.href = 'https://google.ca/'
       }
     }
   });
