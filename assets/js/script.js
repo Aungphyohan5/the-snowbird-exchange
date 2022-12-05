@@ -97,6 +97,7 @@ function getApi() {
 
         // $('#currencyexchange').text(" $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar")
         document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.USD.toFixed(2) + " USD - United States Dollar" + '<img src="assets/flag-icon/USA.png" class="icon">')
+        document.getElementById('currencyexchange').classList.add('currency-display', 'is-size-2');
 
         if (picClass != 'miami-image') {
           picClass.remove(...picClassList);
@@ -108,6 +109,8 @@ function getApi() {
 
         // setting the currency exchange text for h1 element
         document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + " Mexican $" + data.conversion_rates.MXN.toFixed(2) + " MXN  - Mexican Peso " + '<img src="assets/flag-icon/Mexico.png" class="icon">')
+        document.getElementById('currencyexchange').classList.add('currency-display', 'is-size-2');
+
         if (picClass != 'cancun-image') {
           picClass.remove(...picClassList);
         }
@@ -116,7 +119,9 @@ function getApi() {
       else if (city == "Paris") {
         console.log("Paris ");
         // setting the currency exchange text for h1 element
-        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + "$" + data.conversion_rates.EUR.toFixed(2) + " EUR - France Euro" + '<img src="assets/flag-icon/France.png" class="icon">')
+        document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + "$" + data.conversion_rates.EUR.toFixed(2) + " EUR - Euro" + '<img src="assets/flag-icon/France.png" class="icon">')
+        document.getElementById('currencyexchange').classList.add('currency-display', 'is-size-2');
+
         if (picClass != 'paris-image') {
           picClass.remove(...picClassList);
         }
@@ -126,6 +131,8 @@ function getApi() {
         console.log("london");
         // setting the currency exchange text for h1 element
         document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + "$ 1 CAD - Canadian Dollar" + " = " + "$" + data.conversion_rates.GBP.toFixed(2) + " GBP - Pound Sterling" + '<img src="assets/flag-icon/England.png" class="icon">')
+        document.getElementById('currencyexchange').classList.add('currency-display', 'is-size-2');
+
         if (picClass != 'london-image') {
           picClass.remove(...picClassList);
         }
@@ -136,6 +143,7 @@ function getApi() {
         visitCountry = "Brasil";
         // setting the currency exchange text for h1 element
         document.getElementById('currencyexchange').innerHTML = ('<img src="assets/flag-icon/Canada.png" class="icon">' + " $ 1 CAD - Canadian Dollar" + " = " + " $" + data.conversion_rates.BRL.toFixed(2) + " BRL - Brazilian Real" + '<img src="assets/flag-icon/Brazil.png" class="icon">')
+        document.getElementById('currencyexchange').classList.add('currency-display', 'is-size-2');
         if (picClass != 'rio-image') {
           picClass.remove(...picClassList);
         }
