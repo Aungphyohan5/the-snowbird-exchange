@@ -30,16 +30,29 @@ $(".searchBtn").click(function () {
   searchHistory()
 });
 
-// Language buttons 
-$(".englishBtn").click(function () {
-  languagePref = "English";
-  localStorage.setItem("language", languagePref);
-})
-$(".frenchBtn").click(function () {
-  languagePref = "French";
-  localStorage.setItem("language", languagePref);
-  console.log("french currently not available");
-})
+// Language modal 
+$( function() {
+  $( "#dialog-confirm" ).dialog({
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    buttons: {
+      "English": function() {
+        languagePref = "English";
+        localStorage.setItem("language", languagePref);
+        $( this ).dialog( "close" );
+      },
+      "French": function() {
+        languagePref = "French";
+        localStorage.setItem("language", languagePref);
+        $( this ).dialog( "close" );
+        console.log("I hate french");
+      }
+    }
+  });
+} );
+
 
 //Function to add the previously searched cities
 function searchHistory() {
