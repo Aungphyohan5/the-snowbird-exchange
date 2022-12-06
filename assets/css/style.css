@@ -16,6 +16,13 @@ button:hover {
     background-color: rgba(56, 20, 136, 0.6);
 }
 
+.search-div {
+    background-color: rgba(56, 20, 136, 0.4);
+    color: white;
+    width: 435px;
+    padding-left: 5px;
+}
+
 .comingSoon {
     display:block;
    margin-left:auto;
