@@ -6,7 +6,7 @@ A weather and currency exchange website for Canadians looking to winter in Mexic
 ## Table-of-Contents
 
 - [About The Project](#About-The-Project)
-- [Tasks Completed](#Task-Completed)
+- [Tasks Completed](#Tasks-Completed)
 - [Links](#Links)
 - [Screenshot](#Screenshot)
 - [Built With](#Built-With)
