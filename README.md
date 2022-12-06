@@ -41,17 +41,16 @@ Repository URL  -  https://github.com/Meduion/the-snowbird-exchange
 
 ## Screenshot
 
-![App Screenshot](./Assets/images/screenshot.png)
+![App Screenshot](./assets/images/screenshot.png)
 
 
 ## Built With
 
-* [![HTML][html.com]][html-url]
-* [![CSS][developer.mozilla.org/en-US/docs/Web/CSS]][CSS-url]
-* [![JavaScript][developer.mozilla.org/en-US/docs/Web/JavaScript.com]][JavaScript-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-* [![Bulma][bulma.io]][Bulma-url]
-
+* HTML
+* CSS
+* JavaScript
+* JQuery
+* Bulma
 
 ## License
 
