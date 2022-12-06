@@ -55,9 +55,9 @@ Repository URL  -  https://github.com/Meduion/the-snowbird-exchange
 
 ## Used-API
 
-* ExchangeRate-API
-* OpenWeather API - 5 day weather forecast
-* OpenWeather API - Direct geocoding
+* ExchangeRate-API -- https://www.exchangerate-api.com/docs/standard-requests
+* OpenWeather API - 5 day weather forecast -- https://openweathermap.org/forecast5
+* OpenWeather API - Direct geocoding -- https://openweathermap.org/api/geocoding-api
 
 ## License
 
@@ -65,8 +65,17 @@ Distributed under the MIT License
 
 ## credits
 
+- HTML, CSS, and Javascript written by Aung Phyo Han, Brian Wyatt, and Stephen Brown
+
 - W3school (https://www.w3schools.com/)
 
 - JQuery (https://www.JQuery.com)
 
 - Bulma (https://bulma.io/)
+
+- Photos used under free use from Pexels.com
+    https://www.pexels.com/photo/aerial-view-of-a-city-during-sunset-8574509/
+    https://www.pexels.com/photo/parked-boat-1450353/
+    https://www.pexels.com/photo/big-ben-bridge-castle-city-460672/
+    https://www.pexels.com/photo/christ-the-redeemer-2868242/
+    https://www.pexels.com/photo/glass-building-1796725/
