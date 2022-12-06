@@ -9,7 +9,7 @@ $( function() {
         "English": function() {
           localStorage.setItem("language","homeenglish");
           $( this ).dialog( "close" );
-          window.location.href = 'index.html';
+          window.location.href = 'english.html';
           console.log("I don't think this worked")
         },
         "French": function() {
@@ -28,7 +28,7 @@ $( function() {
       buttons: {
         Ok: function() {
           $( this ).dialog( "close" );
-          window.location.href = 'index.html';
+          window.location.href = 'english.html';
         }
       }
     });
