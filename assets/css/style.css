@@ -16,6 +16,13 @@ button:hover {
     background-color: rgba(56, 20, 136, 0.6);
 }
 
+.comingSoon {
+    display:block;
+   margin-left:auto;
+   margin-right:auto;
+   width:60%;
+   height:auto;
+}
 .weather-icon {
     display: block;
     margin-left: auto;
