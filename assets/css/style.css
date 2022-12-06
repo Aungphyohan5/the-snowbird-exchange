@@ -52,7 +52,7 @@ button:hover {
 
 .paris-image {
     background-image: url('../images/Paris.jpg');
-    background-size: contain;
+    background-size: cover;
 }
 
 .rio-image {
