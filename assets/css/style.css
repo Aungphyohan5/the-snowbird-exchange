@@ -120,13 +120,12 @@ button:hover {
     margin-left: 10px;
 }
 
-#five-day-heading {
-    margin-left: 10px;
-}
-
 @media only screen and (max-width: 768px) {
     .five-day-display {
         height: 100vmax;
         width: auto;
+    }
+    #five-day-heading {
+        text-align: center;
     }
 }
