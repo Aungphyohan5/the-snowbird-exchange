@@ -1,5 +1,5 @@
 # the-snowbird-exchange
-A weather and currency exchange website for Canadians looking to winter in Mexico
+A weather and currency exchange website for Canadians looking to winter abroad.
 
 
 
@@ -17,20 +17,21 @@ A weather and currency exchange website for Canadians looking to winter in Mexic
 
 ## About-The-Project
 
-In this project, we developed an application for Canadians seeking to escape winter in Mexico, the United States, England, France, and Brazil. The user can check the weather and current exchange rates for the most popular destinations. So that they can plan their trip in advance and get the best value for their budget.
+In this project, we developed an application for Canadians seeking to escape winter in Mexico, the United States, England, France, and Brazil. The user can check the weather and current exchange rates for the most popular destinations so that they can plan their trip in advance and get the best value for their budget.
 
 
 ## Tasks-Completed
 
 - User can select the language either English or French
-- Search input for the city that desire to visit
+- Local storage is used to store the language preference
+- Search input for the city user desires to visit
 - Autocomplete for the search bar
-- The server-side API used to get response data object is retrieved from the Open Weather API and exchange rate API
+- The server-side API used to get response data object is retrieved from the Geo-location API and fed to the Open Weather API and exchange rate API
 - User can check the current exchange rates
 - User can check the 5 days weather forecast with the temperature, the humidity, and the wind speed
 - The user can also clear the search history by clicking the clear history button
-- Search history for the recent searches
-- The local storage is used here to store the language preference
+- Search history displays recent searches and will run search again if clicked
+
 
 
 
@@ -79,3 +80,4 @@ Distributed under the MIT License
     https://www.pexels.com/photo/big-ben-bridge-castle-city-460672/
     https://www.pexels.com/photo/christ-the-redeemer-2868242/
     https://www.pexels.com/photo/glass-building-1796725/
+    https://www.pexels.com/photo/airplanes-on-the-runway-at-sunset-11618705/
