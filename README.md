@@ -17,7 +17,7 @@ A weather and currency exchange website for Canadians looking to winter abroad.
 
 ## About-The-Project
 
-In this project, we developed an application for Canadians seeking to escape winter in Mexico, the United States, England, France, and Brazil. The user can check the weather and current exchange rates for the most popular destinations so that they can plan their trip in advance and get the best value for their budget.
+In this project, we developed an application for Canadians seeking to travel the world and escape winter weather. In the alpha phase we focused on five International Markets, in Mexico, the United States, England, France, and Brazil. The user can check the weather and current exchange rates for the most popular destinations so that they can plan their trip in advance and get the best value for their budget.
 
 
 ## Tasks-Completed
