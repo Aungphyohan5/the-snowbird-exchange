@@ -10,16 +10,17 @@ A weather and currency exchange website for Canadians looking to winter in Mexic
 - [Links](#Links)
 - [Screenshot](#Screenshot)
 - [Built With](#BuiltWith)
+- [Used API](#UsedAPI)
 - [License](#license)
 - [Credits](#credits)
 
 
-## AboutTheProject
+## About The Project
 
 In this project, we developed an application for Canadians seeking to escape winter in Mexico, the United States, England, France, and Brazil. The user can check the weather and current exchange rates for the most popular destinations. So that they can plan their trip in advance and get the best value for their budget.
 
 
-## TasksCompleted
+## Tasks Completed
 
 - User can select the language either English or French
 - Search input for the city that desire to visit
@@ -44,13 +45,19 @@ Repository URL  -  https://github.com/Meduion/the-snowbird-exchange
 ![App Screenshot](./assets/images/screenshot.png)
 
 
-## BuiltWith
+## Built With
 
 * HTML
 * CSS
 * JavaScript
 * JQuery
 * Bulma
+
+## Used API
+
+* ExchangeRate-API
+* OpenWeather API - 5 day weather forecast
+* OpenWeather API - Direct geocoding
 
 ## License
 
