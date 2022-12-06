@@ -9,7 +9,7 @@ A weather and currency exchange website for Canadians looking to winter in Mexic
 - [Tasks Completed](#Tasks-Completed)
 - [Links](#Links)
 - [Screenshot](#Screenshot)
-- [Built With](#Built-With)
+- [Technologies Used](#Technologies-Used)
 - [Used API](#Used-API)
 - [License](#license)
 - [Credits](#credits)
@@ -45,7 +45,7 @@ Repository URL  -  https://github.com/Meduion/the-snowbird-exchange
 ![App Screenshot](./assets/images/screenshot.png)
 
 
-## Built-With
+## Technologies-Used
 
 * HTML
 * CSS
