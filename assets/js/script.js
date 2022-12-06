@@ -28,7 +28,7 @@ $(".searchBtn").click(function () {
   if (!city) {
     return;
   }
-  getApi();
+  currencyExchange();
   searchButton();
   searchHistory();
   $("#city").val("");
@@ -73,7 +73,7 @@ function searchHistory() {
   $("#extraBtn").on("click", function () {
     city = $(this).text();
     console.log(city)
-    getApi();
+    currencyExchange();
     searchButton();
   });
 
@@ -82,7 +82,7 @@ function searchHistory() {
 
 city = $("#city").val();
 
-function getApi() {
+function currencyExchange() {
   // fetch request gets a list of currency exchange rate
   var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
   fetch(requestURL)
