@@ -91,7 +91,7 @@ function currencyExchange() {
       console.log(data)
       //hard code depending on city chosen to set other variables
       var picClass = locationPictureEL.classList
-      var picClassList = ['miami-image', 'cancun-image', 'london-image', 'rio-image', 'paris-image'];
+      var picClassList = ['miami-image', 'cancun-image', 'london-image', 'rio-image', 'paris-image', 'initial-background-image'];
       if (city == "Miami") {
         console.log("Miami");
 

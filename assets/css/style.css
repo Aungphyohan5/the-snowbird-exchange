@@ -47,6 +47,11 @@ button:hover {
     width: auto;
 }
 
+.initial-background-image {
+    background-image: url('../images/runway.jpg');
+    background-size: cover;
+}
+
 .cancun-image {
     background-image: url('../images/beach-photo.jpg');
     background-size: cover;
