@@ -16,8 +16,21 @@ $( function() {
           localStorage.setItem("language","homefrench");
           $( this ).dialog( "close" );
           console.log("I hate french");
-          window.location.href = 'https://google.ca/'
+          window.location.href = './french.html'
         }
       }
     });
   } );
+
+  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+          window.location.href = 'index.html';
+        }
+      }
+    });
+  } );
+  

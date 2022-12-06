@@ -12,6 +12,13 @@ button:hover {
     background-size: cover;
 }
 
+.comingSoon {
+    display:block;
+   margin-left:auto;
+   margin-right:auto;
+   width:60%;
+   height:auto;
+}
 .weather-icon {
     display: block;
     margin-left: auto;
