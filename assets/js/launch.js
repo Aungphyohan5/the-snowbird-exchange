@@ -7,21 +7,20 @@ $( function() {
       modal: true,
       buttons: {
         "English": function() {
-          localStorage.setItem("language","homeenglish");
+          localStorage.setItem("language","english");
           $( this ).dialog( "close" );
           window.location.href = 'english.html';
-          console.log("I don't think this worked")
-        },
+            },
         "French": function() {
-          localStorage.setItem("language","homefrench");
+          localStorage.setItem("language","french");
           $( this ).dialog( "close" );
-          console.log("I hate french");
           window.location.href = './french.html'
         }
       }
     });
   } );
 
+  //Redirect from French site as french currently no french version. 
   $( function() {
     $( "#dialog-message" ).dialog({
       modal: true,
