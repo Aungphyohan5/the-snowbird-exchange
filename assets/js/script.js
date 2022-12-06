@@ -34,6 +34,15 @@ $(".frenchBtn").click(function () {
   window.location.href = './french.html'
 })
 
+//changes button color based on local storage
+if (languagePref=="english") {
+  document.querySelector("#englishBtn").addClass("greenBTN");
+  document.querySelector("#frenchBtn").addClass("yellowBTN");
+} else if (languagePref=="french"){
+  document.querySelector("#englishBtn").addClass("yellowBTN");
+  document.querySelector("#frenchBtn").addClass("greenBTN");
+}
+
 // on click function for search
 $(".searchBtn").click(function () {
   city = $("#city").val();
