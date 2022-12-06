@@ -31,6 +31,7 @@ In this project, we developed an application for Canadians seeking to escape win
 - User can check the 5 days weather forecast with the temperature, the humidity, and the wind speed
 - The user can also clear the search history by clicking the clear history button
 - Search history displays recent searches and will run search again if clicked
+- Unique search image will display for each search
 
 
 
