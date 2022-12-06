@@ -22,6 +22,18 @@ $(function () {
   });
 });
 
+// Language buttons 
+$(".englishBtn").click(function () {
+  languagePref = "English";
+  localStorage.setItem("language", languagePref);
+  window.location.href = 'english.html';
+})
+$(".frenchBtn").click(function () {
+  languagePref = "French";
+  localStorage.setItem("language", languagePref);
+  window.location.href = './french.html'
+})
+
 // on click function for search
 $(".searchBtn").click(function () {
   city = $("#city").val();
