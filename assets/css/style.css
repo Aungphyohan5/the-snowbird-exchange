@@ -91,6 +91,19 @@ button:hover {
     width: 70px;
 }
 
+.greenBtn {
+    background-color: #279e33;
+    color: white;
+    border-radius: 5px;
+}
+
+.yellowBtn {
+    background-color: #E0A800;
+    color: white;
+    border-radius: 5px;
+   
+}
+
 #clear-history {
     background-color: #E0A800;
     color: white;

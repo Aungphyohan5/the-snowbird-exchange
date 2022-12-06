@@ -1,3 +1,5 @@
+var languagePref = localStorage.getItem("language");
+
 // Language modal 
 $( function() {
     $( "#dialog-confirm" ).dialog({
@@ -33,3 +35,12 @@ $( function() {
     });
   } );
   
+  if (languagePref=="english") {
+    $(".englishBtn").addClass("greenBtn");
+    $(".frenchBtn").addClass("yellowBtn");
+    console.log("Color should work for English");
+  } else if (languagePref=="french"){
+    $(".englishBtn").addClass("yellowBtn");
+    $(".frenchBtn").addClass("greenBtn");
+    console.log("Color should work for french");
+  }
