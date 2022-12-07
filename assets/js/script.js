@@ -26,13 +26,12 @@ $(function () {
 $(".englishBtn").click(function () {
   languagePref = "english";
   localStorage.setItem("language", languagePref);
-  window.location.href = 'english.html';
+  
 })
 $(".frenchBtn").click(function () {
   languagePref = "french";
   localStorage.setItem("language", languagePref);
-  window.location.href = './french.html'
-})
+ })
 
 //changes button color based on local storage
 if (languagePref=="english") {

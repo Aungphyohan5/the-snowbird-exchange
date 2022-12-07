@@ -29,7 +29,7 @@ $( function() {
       buttons: {
         Ok: function() {
           $( this ).dialog( "close" );
-          window.location.href = 'english.html';
+          
         }
       }
     });
