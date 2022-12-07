@@ -30,42 +30,42 @@ $(".englishBtn").click(function () {
   $(".englishBtn").removeClass("yellowBtn");
   $(".frenchBtn").addClass("yellowBtn");
   $(".frenchBtn").removeClass("greenBtn");
-  
+
 })
 $(".frenchBtn").click(function () {
   languagePref = "french";
   localStorage.setItem("language", languagePref);
   $(".englishBtn").addClass("yellowBtn");
   $(".englishBtn").removeClass("greenBtn");
-  $(".frenchBtn").addClass("greenBtn"); 
+  $(".frenchBtn").addClass("greenBtn");
   $(".frenchBtn").removeClass("yellowBtn");
 })
 
-   $( function() {
-    $( "#dialog" ).dialog({
-      autoOpen: false,
-      show: {
-        effect: "blind",
-        duration: 1000
-      },
-      hide: {
-       
-        duration: 1000
-      }
-    });
- 
-    $( "#opener" ).on( "click", function() {
-      $( "#dialog" ).dialog( "open" );
-    });
-  } );
+$(function () {
+  $("#dialog").dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 1000
+    },
+    hide: {
+
+      duration: 1000
+    }
+  });
+
+  $("#opener").on("click", function () {
+    $("#dialog").dialog("open");
+  });
+});
 //changes button color based on local storage
 
- 
-if (languagePref=="english") {
+
+if (languagePref == "english") {
   $(".englishBtn").addClass("greenBtn");
   $(".frenchBtn").addClass("yellowBtn");
   console.log("Color should work for English");
-} else if (languagePref=="french"){
+} else if (languagePref == "french") {
   $(".englishBtn").addClass("yellowBtn");
   $(".frenchBtn").addClass("greenBtn");
   console.log("Color should work for french");
@@ -108,7 +108,7 @@ city = $("#city").val();
 
 function currencyExchange() {
   // fetch request gets a list of currency exchange rate
-  var requestURL = 'https://v6.exchangerate-api.com/v6/4fecc15eb9a67c4c01430877/latest/CAD';
+  var requestURL = 'https://v6.exchangerate-api.com/v6/93f6250cadfda3500d1dee24/latest/CAD';
   fetch(requestURL)
     .then(function (response) {
       return response.json();
