@@ -16,7 +16,7 @@
     <header class="hero is-info">
         <div class="is-flex is-justify-content-flex-end">
             <button class="englishBtn language">English</button>
-            <button class="frenchBtn language">French</button>
+            <button class="frenchBtn language" id="opener">French</button>
         </div>
         <div class="hero-body">
             <p class="title">
@@ -29,13 +29,9 @@
 
     </header>
 <section>
-    <div id="dialog-message" title="Not available" text="We're sorry but hte French site is currently Unavailable.">
-       
-          <span class="ui-icon ui-icon-circle-check" style="float:top; margin:0 7px 50px 0;"></span>
-          We're sorry but the French site is currently unavailable. 
-          Redirecting you to our English Site.
-        
-          We're sorry but hte French site is currently Unavailable.  </div>
+    <div id="dialog" title="Unavailable">
+        <p aria-hidden="true">French site currently unavailable, Please check back later!</p>
+      </div>
 <img src="./assets/images/coming-soon.jpg" class="comingSoon">
 </section>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

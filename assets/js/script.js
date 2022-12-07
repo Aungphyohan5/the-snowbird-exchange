@@ -26,14 +26,41 @@ $(function () {
 $(".englishBtn").click(function () {
   languagePref = "english";
   localStorage.setItem("language", languagePref);
+  $(".englishBtn").addClass("greenBtn");
+  $(".englishBtn").removeClass("yellowBtn");
+  $(".frenchBtn").addClass("yellowBtn");
+  $(".frenchBtn").removeClass("greenBtn");
   
 })
 $(".frenchBtn").click(function () {
   languagePref = "french";
   localStorage.setItem("language", languagePref);
- })
+  $(".englishBtn").addClass("yellowBtn");
+  $(".englishBtn").removeClass("greenBtn");
+  $(".frenchBtn").addClass("greenBtn"); 
+  $(".frenchBtn").removeClass("yellowBtn");
+})
 
+   $( function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+       
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener" ).on( "click", function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  } );
 //changes button color based on local storage
+
+ 
 if (languagePref=="english") {
   $(".englishBtn").addClass("greenBtn");
   $(".frenchBtn").addClass("yellowBtn");
@@ -42,7 +69,7 @@ if (languagePref=="english") {
   $(".englishBtn").addClass("yellowBtn");
   $(".frenchBtn").addClass("greenBtn");
   console.log("Color should work for french");
-}
+};
 
 // on click function for search
 $(".searchBtn").click(function () {
