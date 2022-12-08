@@ -76,9 +76,14 @@ Distributed under the MIT License
 - Bulma (https://bulma.io/)
 
 - Photos used under free use from Pexels.com
-    https://www.pexels.com/photo/aerial-view-of-a-city-during-sunset-8574509/
-    https://www.pexels.com/photo/parked-boat-1450353/
-    https://www.pexels.com/photo/big-ben-bridge-castle-city-460672/
-    https://www.pexels.com/photo/christ-the-redeemer-2868242/
-    https://www.pexels.com/photo/glass-building-1796725/
+    https://www.pexels.com/photo/aerial-view-of-a-city-during-sunset-8574509/  
+    
+    https://www.pexels.com/photo/parked-boat-1450353/  
+    
+    https://www.pexels.com/photo/big-ben-bridge-castle-city-460672/  
+    
+    https://www.pexels.com/photo/christ-the-redeemer-2868242/  
+    
+    https://www.pexels.com/photo/glass-building-1796725/  
+    
     https://www.pexels.com/photo/airplanes-on-the-runway-at-sunset-11618705/
