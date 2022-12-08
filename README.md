@@ -75,7 +75,8 @@ Distributed under the MIT License
 
 - Bulma (https://bulma.io/)
 
-- Photos used under free use from Pexels.com
+- Photos used under free use from Pexels.com  
+
     https://www.pexels.com/photo/aerial-view-of-a-city-during-sunset-8574509/  
     
     https://www.pexels.com/photo/parked-boat-1450353/  
