@@ -38,9 +38,9 @@ In this project, we developed an application for Canadians seeking to travel the
 
 ## Links
 
-Website URL     -  https://meduion.github.io/the-snowbird-exchange/
+Website URL     -  https://aungphyohan5.github.io/the-snowbird-exchange/
 
-Repository URL  -  https://github.com/Meduion/the-snowbird-exchange
+Repository URL  -  https://github.com/Aungphyohan5/the-snowbird-exchange
 
 ## Screenshot
 
